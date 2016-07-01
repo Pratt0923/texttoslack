@@ -6,26 +6,26 @@ class AuthController < ApplicationController::Base
   end
 
   def postmessage
-    account_sid = 'AC5729bb35494fe8b8c7d35b675d4209c0'
-    auth_token = 'b32741da99c36ca100dc9235d1cb2aaa'
+    account_sid = ''
+    auth_token = ''
     @client = Twilio::REST::Client.new account_sid, auth_token
     @client.account.messages.create({
-      :from => '+19195903795',
-      :to => '+19195903795',
-      :body => 'Hey Jenny! Good luck on the bar exam!'
+      :from => '+',
+      :to => '+',
+      :body => 'this is a test!'
       })
     end
 
     def getmessage
-      account_sid = 'AC5729bb35494fe8b8c7d35b675d4209c0'
-      auth_token = 'b32741da99c36ca100dc9235d1cb2aaa'
+      account_sid = ''
+      auth_token = ''
       @client = Twilio::REST::Client.new account_sid, auth_token
-      @message = @client.account.messages.get("SM2fa324674ab64a02b432a4431705bbf3")
+      @message = @client.account.messages.get("")
       puts @message.body
     end
 
     def post_message_to_slack
-      @message = @client.account.messages.get("SM2fa324674ab64a02b432a4431705bbf3")
+      @message = @client.account.messages.get("")
       data = {
         channel: "#general",
         username: "you did it!",
