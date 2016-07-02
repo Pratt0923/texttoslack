@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160630171425) do
     t.string   "slack_data"
     t.string   "slack_id"
     t.string   "phone_number"
+    t.string   "token"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
